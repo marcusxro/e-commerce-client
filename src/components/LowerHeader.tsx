@@ -6,7 +6,7 @@ import { IoSearchSharp } from "react-icons/io5";
 
 export default function LowerHeader() {
     return (
-        <div className='flex gap-3 justify-between items-center p-3 bg-[#fff]'>
+        <div className='flex gap-3 justify-between items-center p-3 bg-[#454545] text-white'>
             <div className='w-full'>
                 Logos
             </div>

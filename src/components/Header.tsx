@@ -4,7 +4,7 @@ import React from 'react'
 
 export default function Header() {
   return (
-    <div className='flex gap-3 justify-between items-center p-5'>
+    <div className='flex gap-3 justify-between items-center p-5 '>
       <div>
         Kraph
       </div>

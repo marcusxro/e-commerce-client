@@ -1,3 +1,4 @@
+
 import { SignedIn, SignedOut, UserButton } from '@clerk/nextjs'
 import { currentUser } from '@clerk/nextjs/server'
 import Link from 'next/link'
@@ -7,9 +8,9 @@ export default async function UpperHeader() {
     const user: any = await currentUser()
 
     return (
-        <div className='flex gap-3 justify-between items-center p-3 bg-[#eeeeee]'>
+        <div className='flex gap-3 justify-between items-center p-3 bg-[#252525] text-white'>
             <div>
-                Logo
+                <a href="/"> Logo</a>
             </div>
 
             <div className='flex gap-3 items-center text-sm'>
