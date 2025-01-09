@@ -12,6 +12,7 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel"
+import Category from "@/components/Category";
 
 const sports = [
   {
@@ -87,10 +88,14 @@ export default function Home() {
     <LowerHeader/>
     </div>
 
-    <div className="flex items-center justify-center flex-col">
+    <div className="flex items-center justify-center flex-col py-6">
      <h2> Move. Sell. Shop. Customize. With Us</h2>
      <p className="text-[12px]">No matter what you feel like doing today, It's better as a member.</p>
      <a href="#" className="underline text-[12px]">Join Us</a>
+    </div>
+
+    <div className="flex items-center justify-center flex-col ">
+      <video src="/video.mp4" className="h-[475px]" autoPlay muted loop></video>
     </div>
 
     <div className="py-10 px-4 md:px-6">
@@ -153,7 +158,7 @@ export default function Home() {
       </div>
     </div>
 
-    <div className="py-10 px-4 md:px-6">
+    <div className="pt-10 px-4 md:px-6">
       <h2 className="text-3xl font-bold tracking-tight mb-8">Member Benefits</h2>
       <div className="relative">
         <Carousel
@@ -195,6 +200,10 @@ export default function Home() {
           <CarouselNext className="absolute right-4 top-1/2 -translate-y-1/2 z-10 bg-white/70 hover:bg-white/90" />
         </Carousel>
       </div>
+    </div>
+
+    <div>
+      <Category/>
     </div>
     
     <Footer/>
