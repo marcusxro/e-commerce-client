@@ -72,13 +72,13 @@ export default function Footer() {
                         className='cursor-pointer text-sm'>Home</div>
                     <div
                         onClick={() => { navToHome() }}
-                        className='cursor-pointer text-sm'>Documentation</div>
+                        className='cursor-pointer text-sm'>Terms of Use</div>
                     <div
                         onClick={() => { navToHome() }}
-                        className='cursor-pointer text-sm'>About</div>
+                        className='cursor-pointer text-sm'>Terms of Sale</div>
                     <div
                         onClick={() => { navToHome() }}
-                        className='cursor-pointer text-sm'>Contact</div>
+                        className='cursor-pointer text-sm'>Privacy Policy</div>
                 </div>
             </div>
         </div>
