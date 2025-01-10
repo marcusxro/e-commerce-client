@@ -8,7 +8,7 @@ export default async function UpperHeader() {
     const user: any = await currentUser()
 
     return (
-        <div className='flex gap-3 justify-between items-center p-3 bg-[#252525] text-white'>
+        <div className='flex gap-3 justify-between items-center p-3 bg-[#f2f0ef] text-[#333333]'>
             <div>
                 <a href="/"> Logo</a>
             </div>

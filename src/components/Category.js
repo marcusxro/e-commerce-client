@@ -34,9 +34,9 @@ export default function CategoryNav() {
       {/* Desktop View */}
       <div className="hidden md:grid md:grid-cols-4 gap-8">
         {categories.map((category) => (
-          <div key={category.title} className="space-y-4">
+          <div key={category.title} className="space-y-2">
             <h2 className="text-xl font-semibold">{category.title}</h2>
-            <ul className="space-y-3">
+            <ul className="space-y-2">
               {category.items.map((item) => (
                 <li key={item}>
                   <a

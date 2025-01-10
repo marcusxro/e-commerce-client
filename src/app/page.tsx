@@ -4,6 +4,7 @@ import Link from "next/link";
 import Footer from "@/components/Footer";
 import UpperHeader from "@/components/UpperHeader";
 import LowerHeader from "@/components/LowerHeader";
+import ProfHeader from "@/components/ProfHeader";
 import { Card, CardContent } from "@/components/ui/card"
 import {
   Carousel,
@@ -13,6 +14,7 @@ import {
   CarouselPrevious,
 } from "@/components/ui/carousel"
 import Category from "@/components/Category";
+
 
 const sports = [
   {
@@ -76,6 +78,26 @@ const benefits = [
   },
 ]
 
+const products = [
+  {
+    name: "Nike Tech Windrunner",
+    description: "Men's Woven Full-Zip Jacket",
+    price: "₱5,995",
+    image: "/basketball.png"
+  },
+  {
+    name: "Nike Tech",
+    description: "Men's Woven Open-Hem Trousers",
+    price: "₱5,495",
+    image: "/basketball.png"
+  },
+  {
+    name: "Nike",
+    description: "Woven Twill Premium Jacket",
+    price: "₱4,795",
+    image: "/basketball.png"
+  }
+]
 
 
 export default function Home() {
@@ -88,18 +110,26 @@ export default function Home() {
     <LowerHeader/>
     </div>
 
-    <div className="flex items-center justify-center flex-col py-6">
-     <h2> Move. Sell. Shop. Customize. With Us</h2>
+    <div className="flex items-center justify-center flex-col py-4 font-semibold">
+     <h2 className="text-lg"> Move. Sell. Shop. Customize. With Us</h2>
      <p className="text-[12px]">No matter what you feel like doing today, It's better as a member.</p>
-     <a href="#" className="underline text-[12px]">Join Us</a>
+     <a href="#" className="underline text-[12px] ">Join Us</a>
     </div>
 
-    <div className="flex items-center justify-center flex-col ">
+    <div className="flex items-center justify-center flex-col gap-2">
       <video src="/video.mp4" className="h-[475px]" autoPlay muted loop></video>
+      <div className="flex flex-col items-center justify-center text-center gap-2">
+        <h2 className="font-bold text-7xl">HAVE YOUR YEAR.</h2>
+        <p className="font-semibold text-lg">This Year is Yours.</p>
+      </div>
+      <div className="flex flex-row gap-1 font-semibold">
+        <button className="text-white bg-[#151515] py-2 px-4 max-w-[90px] rounded-full">Shop</button>
+        <button className="text-white bg-[#151515] py-2 px-4 max-w-[90px] rounded-full">Explore</button>
+      </div>
     </div>
 
     <div className="py-10 px-4 md:px-6">
-      <h2 className="text-3xl font-bold tracking-tight mb-8">Shop By Sport</h2>
+      
       <div className="relative">
         <Carousel
           opts={{
@@ -108,6 +138,18 @@ export default function Home() {
           }}
           className="w-full relative"
         >
+
+        <div className="flex items-center justify-between mb-8">
+          <h2 className="text-2xl font-semibold">Shop by Sport</h2>
+          <div className="flex items-center gap-4">
+            <span className="text-sm"></span>
+            <div className="flex gap-2">
+              <CarouselPrevious className="static  translate-x-0 translate-y-0 h-8 w-8 border-0 bg-gray-100 hover:bg-gray-200" />
+              <CarouselNext className="static  translate-x-0 translate-y-0 h-8 w-8 border-0 bg-gray-100 hover:bg-gray-200" />
+            </div>
+          </div>
+        </div>
+        
           <CarouselContent className="-ml-2 md:-ml-4">
             {sports.map((sport, index) => (
               <CarouselItem key={index} className="pl-2 md:pl-4 md:basis-1/2 lg:basis-1/3">
@@ -134,14 +176,12 @@ export default function Home() {
               </CarouselItem>
             ))}
           </CarouselContent>
-          <CarouselPrevious className="absolute left-4 top-1/2 -translate-y-1/2 z-10 bg-white/70 hover:bg-white/90" />
-          <CarouselNext className="absolute right-4 top-1/2 -translate-y-1/2 z-10 bg-white/70 hover:bg-white/90" />
         </Carousel>
       </div>
     </div>
 
     <div className="py-10 px-4 md:px-6">
-      <h2  className="text-3xl font-bold tracking-tight mb-8">The Latest Tech.</h2>
+      <h2  className="text-3xl font-semibold tracking-tight mb-8">The Latest Tech.</h2>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mx-auto w-full">
           <div className="flex flex-col gap-2 font-semibold">
             <img src="/basketball.png" alt="" />
@@ -159,7 +199,6 @@ export default function Home() {
     </div>
 
     <div className="pt-10 px-4 md:px-6">
-      <h2 className="text-3xl font-bold tracking-tight mb-8">Member Benefits</h2>
       <div className="relative">
         <Carousel
           opts={{
@@ -168,6 +207,18 @@ export default function Home() {
           }}
           className="w-full relative"
         >
+
+        <div className="flex items-center justify-between mb-8">
+          <h2 className="text-2xl font-semibold">Member benefits</h2>
+          <div className="flex items-center gap-4">
+            <span className="text-sm"></span>
+            <div className="flex gap-2">
+              <CarouselPrevious className="static  translate-x-0 translate-y-0 h-8 w-8 border-0 bg-gray-100 hover:bg-gray-200" />
+              <CarouselNext className="static  translate-x-0 translate-y-0 h-8 w-8 border-0 bg-gray-100 hover:bg-gray-200" />
+            </div>
+          </div>
+        </div>
+
           <CarouselContent className="-ml-2 md:-ml-4">
             {benefits.map((benefit, index) => (
               <CarouselItem key={index} className="pl-2 md:pl-4 md:basis-1/2 lg:basis-1/3">
@@ -196,10 +247,72 @@ export default function Home() {
               </CarouselItem>
             ))}
           </CarouselContent>
-          <CarouselPrevious className="absolute left-4 top-1/2 -translate-y-1/2 z-10 bg-white/70 hover:bg-white/90" />
-          <CarouselNext className="absolute right-4 top-1/2 -translate-y-1/2 z-10 bg-white/70 hover:bg-white/90" />
         </Carousel>
       </div>
+    </div>
+
+    <div className="py-10 px-4 md:px-6">
+      <h2  className="text-3xl font-semibold tracking-tight mb-8">The Latest Tech.</h2>
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mx-auto w-full">
+          <div className="flex flex-col gap-2 font-semibold">
+            <img src="/basketball.png" alt="" />
+            <p>Future Ready.</p>
+            <p>The E-Commerce Swift Collection</p>
+            <button className="text-white bg-[#151515] py-2 px-4 max-w-[90px] rounded-full">Shop</button>
+          </div>
+          <div className="flex flex-col gap-2 font-semibold">
+            <img src="/basketball.png" alt="" />
+            <p >Future Ready.</p>
+            <p>The E-Commerce Stride Collection</p>
+            <button className="text-white bg-[#151515] py-2 px-4 max-w-[90px] rounded-full">Shop</button>
+          </div>
+      </div>
+    </div>
+
+    <div className="py-10 px-4 md:px-6">
+      <Carousel
+        opts={{
+          align: "start",
+          loop: true,
+        }}
+        className="w-full"
+      >
+        <div className="flex items-center justify-between mb-8">
+          <h2 className="text-2xl font-semibold">New Arrivals</h2>
+          <div className="flex items-center gap-4">
+            <span className="text-sm"></span>
+            <div className="flex gap-2">
+              <CarouselPrevious className="static  translate-x-0 translate-y-0 h-8 w-8 border-0 bg-gray-100 hover:bg-gray-200" />
+              <CarouselNext className="static  translate-x-0 translate-y-0 h-8 w-8 border-0 bg-gray-100 hover:bg-gray-200" />
+            </div>
+          </div>
+        </div>
+
+        <CarouselContent className="-ml-4">
+          {products.map((product, index) => (
+            <CarouselItem key={index} className="pl-4 md:basis-1/2 lg:basis-1/3">
+              <Card className="border-0">
+                <CardContent className="p-0">
+                  <div className="relative aspect-[3/4] bg-[#f5f5f5] mb-4">
+                    <Image
+                      src={product.image}
+                      alt={product.name}
+                      fill
+                      className="object-cover"
+                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                    />
+                  </div>
+                  <div className="space-y-1">
+                    <h3 className="font-medium">{product.name}</h3>
+                    <p className="text-gray-600">{product.description}</p>
+                    <p className="font-medium">{product.price}</p>
+                  </div>
+                </CardContent>
+              </Card>
+            </CarouselItem>
+          ))}
+        </CarouselContent>
+      </Carousel>
     </div>
 
     <div>
