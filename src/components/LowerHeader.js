@@ -230,7 +230,7 @@ export default function LowerHeader() {
           {navItems.map((item) => (
             <div
               key={item}
-              className="cursor-pointer"
+              className="cursor-pointer hover:underline duration-300"
               onMouseEnter={() => setActiveMenu(item)}
             //   onMouseLeave={() => setActiveMenu(null)}
             >
@@ -269,11 +269,11 @@ export default function LowerHeader() {
           <div className="max-w-7xl mx-auto grid grid-cols-5 gap-8 px-8">
             {Object.entries(menuData[activeMenu]).map(([key, section]) => (
               <div key={key}>
-                <h3 className="font-medium mb-4">{section.title}</h3>
-                <ul className="space-y-2">
+                <h3 className="text-lg font-bold mb-4">{section.title}</h3>
+                <ul className="space-y-2 text-">
                   {section.items.map((item) => (
                     <li key={item}>
-                      <a href="#" className="text-gray-600 hover:text-black text-sm">
+                      <a href="#" className="text-gray-600 hover:text-black font-semibold text-sm">
                         {item}
                       </a>
                     </li>
