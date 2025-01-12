@@ -27,8 +27,8 @@ import SettingsSidebar from "@/components/SettingsSidebar"
 
 
 export default function PaymentMethods() {
-  const [isPaymentModalOpen, setIsPaymentModalOpen] = useState(false)
-  const [isBillingModalOpen, setIsBillingModalOpen] = useState(false)
+  const [isDeliveryModalOpen, setIsDeliveryModalOpen] = useState(false)
+
 
   return (
     <div className="grid lg:grid-cols-5">
@@ -53,95 +53,26 @@ export default function PaymentMethods() {
 
       {/* Main content */}
       <main className="col-span-4 p-6 space-y-8">
-        <h1 className="text-2xl font-semibold tracking-tight flex items-center justify-center">Saved Payment Methods</h1>
+        <h1 className="text-2xl font-semibold tracking-tight flex items-center justify-center">Saved Delivery Addresses</h1>
 
         <div className="space-y-6">
           <div className="flex flex-col items-center justify-center min-h-[200px] text-center space-y-6 p-8">
             <p className="text-gray-600">
-              You currently don't have any saved payment methods. Add a method here to be prefilled for quicker checkout.
+              You currently don't have any saved delivery addresses. Add an address here to be prefilled for quicker checkout.
             </p>
             <Button 
               size="lg" 
               className="bg-gray-700 hover:bg-gray-800 text-white"
-              onClick={() => setIsPaymentModalOpen(true)}
+              onClick={() => setIsDeliveryModalOpen(true)}
             >
               Add Payment Method
             </Button>
           </div>
         </div>
 
-        {/* Add Payment Method Modal */}
-        <Dialog open={isPaymentModalOpen} onOpenChange={setIsPaymentModalOpen}>
-          <DialogContent className="sm:max-w-[425px]">
-            <DialogHeader>
-              <div className="flex justify-between items-center">
-                <DialogTitle className="text-xl font-semibold">Add Payment Method</DialogTitle>
-                <Button
-                  variant="ghost"
-                  size="icon"
-                  className="h-6 w-6 rounded-full"
-                  onClick={() => setIsPaymentModalOpen(false)}
-                >
-                  
-                </Button>
-              </div>
-            </DialogHeader>
-            <form className="space-y-4 py-4">
-              <div className="relative">
-                <Input
-                  placeholder="Card Number"
-                  className="pr-10"
-                />
-                <Lock className="absolute right-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-gray-500" />
-              </div>
-              <div className="grid grid-cols-2 gap-4">
-                <Input placeholder="MM/YY" />
-                <Input placeholder="CVV" />
-              </div>
-              <div className="pt-4">
-                <Button
-                  type="button"
-                  variant="outline"
-                  className="w-full justify-start"
-                  onClick={() => {
-                    setIsPaymentModalOpen(false)
-                    setIsBillingModalOpen(true)
-                  }}
-                >
-                  Add Billing Address
-                </Button>
-              </div>
-              <div className="space-y-4">
-                <div className="flex items-center space-x-2">
-                  <Checkbox id="shipping" />
-                  <label
-                    htmlFor="shipping"
-                    className="text-sm leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
-                  >
-                    Billing address same as default shipping
-                  </label>
-                </div>
-                <div className="flex items-center space-x-2">
-                  <Checkbox id="default" />
-                  <label
-                    htmlFor="default"
-                    className="text-sm leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
-                  >
-                    Set as default payment method
-                  </label>
-                </div>
-              </div>
-              <div className="flex justify-end pt-4">
-                <Button type="submit" className="bg-gray-700 hover:bg-gray-800 text-white">
-                  Save
-                </Button>
-              </div>
-            </form>
-          </DialogContent>
-        </Dialog>
 
         {/* Billing Address Modal */}
-        <Dialog open={isBillingModalOpen} onOpenChange={setIsBillingModalOpen}>
+        <Dialog open={isDeliveryModalOpen} onOpenChange={setIsDeliveryModalOpen}>
           <DialogContent className="sm:max-w-[525px]">
             <DialogHeader>
               <div className="flex justify-between items-center">
@@ -150,7 +81,7 @@ export default function PaymentMethods() {
                   variant="ghost"
                   size="icon"
                   className="h-6 w-6 rounded-full"
-                  onClick={() => setIsBillingModalOpen(false)}
+                  onClick={() => setIsDeliveryModalOpen(false)}
                 >
                   
                 </Button>
@@ -201,13 +132,16 @@ export default function PaymentMethods() {
                   </SelectContent>
                 </Select>
               </div>
+              <div className="">
+              <Input placeholder="Phone Number*" />
+              </div>
               <div className="flex justify-end gap-2 pt-4">
                 <Button 
                   type="button" 
                   variant="outline"
                   onClick={() => {
-                    setIsBillingModalOpen(false)
-                    setIsPaymentModalOpen(true)
+                    setIsDeliveryModalOpen(false)
+                    setIsDeliveryModalOpen(true)
                   }}
                 >
                   Cancel
@@ -216,8 +150,8 @@ export default function PaymentMethods() {
                   type="submit" 
                   className="bg-gray-900 text-white hover:bg-gray-800"
                   onClick={() => {
-                    setIsBillingModalOpen(false)
-                    setIsPaymentModalOpen(true)
+                    setIsDeliveryModalOpen(false)
+                    setIsDeliveryModalOpen(true)
                   }}
                 >
                   Save

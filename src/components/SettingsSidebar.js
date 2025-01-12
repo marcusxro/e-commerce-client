@@ -9,7 +9,7 @@ export default function SettingsSidebar() {
 
     const sidebarItems = [
         { icon: User, label: "Account Details", href: "/member/settings" },
-        { icon: CreditCard, label: "Payment Methods", href: "/member/settings/payment", active: true },
+        { icon: CreditCard, label: "Payment Methods", href: "/member/settings/payment",  },
         { icon: MapPin, label: "Delivery Addresses", href: "/member/settings/delivery-addresses" },
         { icon: Store, label: "Shop Preferences", href: "/member/shop-preferences" },
         { icon: Mail, label: "Communication Preferences", href: "/member/settings/communication-preferences" },
