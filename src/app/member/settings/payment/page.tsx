@@ -2,9 +2,9 @@ import Footer from "@/components/Footer";
 import LowerHeader from "@/components/LowerHeader";
 import ProfHeader from "@/components/ProfHeader";
 import UpperHeader from "@/components/UpperHeader";
-import Settingsss from './Settingsss'
+import Payment from './Payment'
 
-export default function Settings() {
+export default function PaymentPage() {
     return (
         <div>
             <div>
@@ -13,8 +13,10 @@ export default function Settings() {
                 <ProfHeader />
             </div>
 
+            
+
             <div>
-                <Settingsss />
+                <Payment/>
             </div>
 
             <Footer />

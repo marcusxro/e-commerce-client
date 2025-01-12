@@ -17,50 +17,20 @@ import {
   SheetContent,
   SheetTrigger,
 } from "@/components/ui/sheet"
+import SettingsSidebar from "@/components/SettingsSidebar"
+
 
 export default function SettingsPage() {
   const [date, setDate] = useState(null)
   const [isCalendarOpen, setIsCalendarOpen] = useState(false)
 
-  const sidebarItems = [
-    { icon: User, label: "Account Details", href: "#account" },
-    { icon: CreditCard, label: "Payment Methods", href: "#payment" },
-    { icon: MapPin, label: "Delivery Addresses", href: "#delivery" },
-    { icon: Store, label: "Shop Preferences", href: "#shop" },
-    { icon: Mail, label: "Communication Preferences", href: "#communication" },
-    { icon: Share2, label: "Profile Visibility", href: "#visibility" },
-    { icon: Link, label: "Linked Accounts", href: "#linked" },
-  ]
-
-  const SidebarContent = () => (
-    <div className="space-y-4 py-4">
-      <div className="px-3 py-2">
-        <h2 className="mb-2 px-4 text-lg font-semibold">Settings</h2>
-        <div className="space-y-1">
-          {sidebarItems.map((item, index) => (
-            <Button
-              key={index}
-              variant="ghost"
-              className="w-full justify-start gap-2"
-              asChild
-            >
-              <a href={item.href}>
-                <item.icon className="h-4 w-4" />
-                {item.label}
-              </a>
-            </Button>
-          ))}
-        </div>
-      </div>
-    </div>
-  )
 
   return (
     <div className="grid lg:grid-cols-5">
       {/* Sidebar for larger screens */}
       <aside className="hidden lg:block lg:col-span-1">
         <div className="sticky top-0 h-screen border-r">
-          <SidebarContent />
+          <SettingsSidebar />
         </div>
       </aside>
 
@@ -72,7 +42,7 @@ export default function SettingsPage() {
           </Button>
         </SheetTrigger>
         <SheetContent side="left" className="w-64">
-          <SidebarContent />
+          <SettingsSidebar />
         </SheetContent>
       </Sheet>
 
