@@ -11,7 +11,7 @@ export default function SettingsSidebar() {
         { icon: User, label: "Account Details", href: "/member/settings" },
         { icon: CreditCard, label: "Payment Methods", href: "/member/settings/payment",  },
         { icon: MapPin, label: "Delivery Addresses", href: "/member/settings/delivery-addresses" },
-        { icon: Store, label: "Shop Preferences", href: "/member/shop-preferences" },
+        { icon: Store, label: "Shop Preferences", href: "/member/settings/shop-preferences" },
         { icon: Mail, label: "Communication Preferences", href: "/member/settings/communication-preferences" },
         { icon: Share2, label: "Profile Visibility", href: "/member/settings/profile-visibility" },
         { icon: LinkIcon, label: "Linked Accounts", href: "/member/settings/linked-accounts" },
