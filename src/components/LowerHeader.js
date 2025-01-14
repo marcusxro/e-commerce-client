@@ -254,7 +254,7 @@ export default function LowerHeader() {
             <CiHeart />
           </div>
           <div className="text-3xl cursor-pointer hover:bg-[#c7c7c7] rounded-full p-1">
-            <IoBagOutline />
+            <a href='/cart'><IoBagOutline /></a>
           </div>
         </div>
       </div>
